@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  robotfw_api:
+    build:
+      context: .
+    image: ${RFW_IMAGE_TAG:-robotfw_api:latest}
+    container_name: robotfw_api
+    volumes:
+      - ./:/opt/robotfw/tests
+    command:
+      - robot
+      - --variablefile=${VARIABLE_FILE:-./environments/test_env.py}
+      - --skip=skip
+      - --loglevel=${LOG_LEVEL:-INFO}
+      - --outputdir=${OUTPUT_DIR:-testresults}
+      - --xunit=outputxunit.xml
+      - --output=TestRun.xml
+      - --log=TestRun.html
+      - --report=TestReport.html
+      - ${TESTS_TAG:---i=api}
+      - ./tests/.

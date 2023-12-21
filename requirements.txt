@@ -1,0 +1,5 @@
+robotframework==6.1
+requests==2.31.0
+robotframework-requests==0.9.5
+genson==1.2.2
+jsonschema==4.19.0

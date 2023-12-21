@@ -1,0 +1,13 @@
+{
+    "files.exclude": {
+        "**/__pycache__": true
+    },
+    "robot.pythonpath": [
+        "${workspaceRoot}",
+        "${workspaceRoot}/resources/libs",
+    ],
+    "robot.libraries.libdoc.needsArgs": [
+        "../resources/libs/ApiUser.py",
+        "../resources/libs/ApiKeywords.py",
+    ],
+}
